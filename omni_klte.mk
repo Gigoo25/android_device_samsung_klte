@@ -35,16 +35,14 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, device/samsung/klte/device.mk)
 
 # Discard inherited values and use our own instead.
+PRODUCT_NAME := omni_klte
 PRODUCT_DEVICE := klte
-PRODUCT_NAME := cm_klte
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := klte
 
-
-
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
+# Inherit common makefile
 $(call inherit-product, device/samsung/klte/full_klte.mk)
 
-PRODUCT_DEVICE := klte
-PRODUCT_NAME := cm_klte
+# Inherit from proprietary blobs
+$(call inherit-product-if-exists, vendor/samsung/klte/klte-vendor.mk)
