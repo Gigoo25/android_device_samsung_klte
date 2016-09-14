@@ -44,8 +44,5 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := klte
 
-# Inherit common makefile
-$(call inherit-product, device/samsung/klte/full_klte.mk)
-
 # Inherit from proprietary blobs
 $(call inherit-product-if-exists, vendor/samsung/klte/klte-vendor.mk)
